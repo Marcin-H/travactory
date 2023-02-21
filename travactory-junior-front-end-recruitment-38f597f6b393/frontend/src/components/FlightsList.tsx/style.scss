@@ -1,0 +1,256 @@
+.flights_table {
+  width: 100%;
+  background-color: white;
+  border-collapse: collapse;
+
+  &__row {
+    border-bottom: 20px solid rgb(234, 230, 222);
+    display: flex;
+  }
+
+  &__main {
+    width: 70%;
+    height: 100%;
+  }
+
+  &__summary_area {
+    background-color: orange;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+
+    &__container {
+      display: flex;
+      justify-content: center;
+      text-align: center;
+
+      &__sum {
+        font-size: 34px;
+        font-weight: bold;
+      }
+
+      &__shortcut {
+        font-weight: bold;
+        align-self: flex-end;
+        margin-left: 5px;
+        margin-bottom: 5px;
+      }
+    }
+
+    &__btn_container {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 10px;
+      margin-top: 2px;
+    }
+    &__btn {
+      width: 80%;
+      border-radius: 20px;
+      height: 40px;
+      border: 0;
+      background-color: rgb(75, 149, 247);
+      color: white;
+      font-size: 15px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  }
+}
+
+.flight_details_btn_container {
+  display: flex;
+  justify-content: end;
+  margin-top: 5px;
+}
+.flight_details_btn {
+  cursor: pointer;
+  font-size: 12px;
+  border: none;
+  background: none;
+  text-decoration: underline;
+}
+
+.flight_information {
+  display: flex;
+  max-height: 100px;
+  margin-bottom: 10px;
+
+  &__logo {
+    flex: 1;
+    padding: 15px;
+  }
+  &__logo > img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  &__data {
+    flex: 4;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-right: 50px;
+    margin-bottom: 10px;
+  }
+
+  &__departure {
+    &__code {
+      font-size: 17px;
+      display: flex;
+      justify-content: end;
+    }
+    &__time {
+      font-size: 34px;
+      font-weight: bold;
+    }
+    &__date {
+      font-size: 17px;
+      align-items: center;
+      display: flex;
+      justify-content: end;
+    }
+  }
+
+  &__destination {
+    &__code {
+      font-size: 17px;
+    }
+    &__time {
+      font-size: 34px;
+      font-weight: bold;
+    }
+    &__date {
+      font-size: 17px;
+      align-items: center;
+    }
+  }
+}
+
+.flight_information:not(:last-child) {
+  background-image: linear-gradient(to bottom, #000 1px, rgba(255, 255, 255, 0) 1px);
+  background-position: bottom;
+  background-size: 95% 1px;
+  background-repeat: no-repeat;
+}
+
+.timeline-wrapper {
+  position: relative;
+  width: 130%;
+  margin: auto;
+  right: 27%;
+}
+
+.middle-line {
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: orange;
+}
+
+.boxLeft {
+  position: relative;
+}
+
+.boxRight {
+  position: relative;
+  left: 100%;
+}
+
+.boxCircle {
+  position: absolute;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 100%;
+  background: #fff;
+  border: 2px solid orange;
+}
+
+.arrow_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.arrow::after {
+  content: '';
+  position: absolute;
+  border-top: 12px solid orange;
+  border-left: 12px solid transparent;
+  border-bottom: 12px solid transparent;
+  border-right: 12px solid transparent;
+  margin-left: -21px;
+  margin-top: -12px;
+  transform: rotate(90deg);
+}
+
+.sorting_options {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+}
+
+@media only screen and (max-width: 766px) {
+  .flights_table {
+    &__main {
+      width: 100%;
+    }
+
+    &__row {
+      display: block;
+    }
+
+    &__summary_area_mobile {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  .flight_information {
+    &__data {
+      margin-left: 35px;
+      justify-content: space-around;
+    }
+
+    &__logo {
+      position: absolute;
+      width: 25px;
+      margin-top: -35px;
+      left: 30px;
+    }
+  }
+
+  .flights_table__summary_area__btn {
+    width: 120px;
+    margin: 0;
+  }
+
+  .arrow::after {
+    transform: rotate(180deg);
+    margin-top: -23px;
+  }
+}
+
+@media only screen and (max-width: 1023px) {
+  .flight_information {
+    &__data {
+      margin-left: 35px;
+      justify-content: space-around;
+    }
+
+    &__logo {
+      position: absolute;
+      width: 25px;
+      margin-top: -35px;
+      left: 30px;
+    }
+  }
+
+  .flights_table__summary_area__btn {
+    width: 120px;
+    margin: 0;
+  }
+}
